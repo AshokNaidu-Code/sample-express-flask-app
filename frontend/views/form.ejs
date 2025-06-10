@@ -1,0 +1,9 @@
+<!DOCTYPE html><html><body>
+  <% if (error) { %><p style="color:red;"><%= error %></p><% } %>
+  <form action="/submit" method="post">
+    <input name="name" placeholder="Name" required/>
+    <input name="email" type="email" placeholder="Email" required/>
+    <button type="submit">Submit</button>
+  </form>
+</body></html>
+
