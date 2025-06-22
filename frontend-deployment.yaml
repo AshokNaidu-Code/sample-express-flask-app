@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-deployment
+  labels:
+    app: frontend
+spec:
+  replicas: 1 
+  selector:
+    matchLabels:
+      app: frontend
+  template:
+    metadata:
+      labels:
+        app: frontend
+    spec:
+      containers:
+      - name: frontend-app
+        image: ashoknallam/frontend:latest 
+        ports:
+        - containerPort: 3000 
+        env:
+        - name: REACT_APP_API_BASE_URL 
+          value: "http://backend-service:5000" 
